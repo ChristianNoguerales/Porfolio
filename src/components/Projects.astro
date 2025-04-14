@@ -1,0 +1,126 @@
+---
+import TailwindcssIcon from "../icons/Tailwindcss.astro";
+import AstroIcon from "../icons/Icono.astro";
+import JavaScriptIcon from "../icons/JavaScript.astro";
+import JavaIcon from "../icons/java.astro";
+import CIcon from "../icons/C.astro";
+
+const TAGS = {
+    ASTRO: {
+        name: "Astro ",
+        class: "bg-black text-white",
+        icon: AstroIcon,
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-black text-white",
+        icon: TailwindcssIcon,
+    },
+    JAVASCRIPT: {
+        name: "JavaScript",
+        class: "bg-black text-white",
+        icon: JavaScriptIcon,
+    },
+    C: {
+        name: "C++",
+        class: "bg-black text-white",
+        icon: CIcon,
+    },
+    JAVA: {
+        name: "Java",
+        class: "bg-black text-white",
+        icon: JavaIcon,
+    },
+};
+
+const PROJECTS = [
+    {
+        title: "Aeropuerto",
+        description: `Simulación de aeropuertos que utiliza una serie de elementos interconectados que 
+                    interactúan para lograr el funcionamiento del intercambio de aviones y pasajeros de dos 
+                    aeropuertos (Madrid y Barcelona), consta de dos componentes principales 
+                    (aparte de los aeropuertos). Estas son los aviones y los autobuses.`,
+        link: "",
+        github: "#",
+        image: "/Aeropuerto.jpg",
+        tags: [TAGS.C],
+    },
+    {
+        title: "Paqueteria",
+        description: `Sistema de simulación que represente el funcionamiento de una red de distribución de 
+                    paquetería, utilizando estructuras de datos como árboles binarios de búsqueda (ABB) y 
+                    listas enlazadas. Este sistema permite insertar, distribuir, buscar, eliminar y mover 
+                    paquetes entre centrales de forma eficiente.`,
+        link: "",
+        github: "#",
+        image: "/Paqueteria.jpg",
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+    },
+    {
+        title: "Porfolio",
+        description: `Este porfolio ha sido desarrollado como una extensión de mi currículum, combinando diseño 
+            minimalista y funcionalidad web moderna para reflejar tanto mi perfil profesional como mis 
+            habilidades técnicas. Lo he construido utilizando Visual Studio Code como entorno de desarrollo, 
+            junto con tecnologías punteras del desarrollo web: Astro como framework base: me ha permitido 
+            crear una web rápida, optimizada y centrada en el contenido, ideal para un porfolio personal.
+            Tailwind CSS: utilizado para diseñar una interfaz limpia y adaptable, con un estilo minimalista que 
+            sigue la estética del currículum en el que me inspiré. JavaScript: implementado para añadir 
+            interactividad y dinamismo a ciertos elementos de la web, manteniendo una navegación fluida y 
+            moderna.`,
+        link: "",
+        github: "#",
+        image: "/Porfolio.jpg",
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+    },
+    {
+        title: "Porfolio",
+        description: `Este porfolio ha sido desarrollado como una extensión de mi currículum, combinando diseño 
+            minimalista y funcionalidad web moderna para reflejar tanto mi perfil profesional como mis 
+            habilidades técnicas. Lo he construido utilizando Visual Studio Code como entorno de desarrollo, 
+            junto con tecnologías punteras del desarrollo web: Astro como framework base: me ha permitido 
+            crear una web rápida, optimizada y centrada en el contenido, ideal para un porfolio personal.
+            Tailwind CSS: utilizado para diseñar una interfaz limpia y adaptable, con un estilo minimalista que 
+            sigue la estética del currículum en el que me inspiré. JavaScript: implementado para añadir 
+            interactividad y dinamismo a ciertos elementos de la web, manteniendo una navegación fluida y 
+            moderna.`,
+        link: "",
+        github: "#",
+        image: "/Porfolio.jpg",
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+    },
+];
+---
+
+<div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 justify-center items-center mx-60"
+>
+    {
+        PROJECTS.map(({ image, title, description, tags }) => (
+            <div class=" cursor-pointer">
+                <article class=" group grid gap-2 items-center bg-white/10 shadow-xl rounded-2xl overflow-hidden p-6 mb-8 transition hover:shadow-yellow-200/30">
+                    <img
+                        class="rounded shadow-2xl shadow-white/10 transition transform hover:scale-105 hover:translate-x-2 hover:translate-y-2 duration-300"
+                        src={image}
+                        alt={`Captura de pantalla del proyecto ${image}`}
+                    />
+                    <h3 class="text-2xl font-semibold text-yellow-200 mb-2 mt-2">
+                        {title}
+                    </h3>
+                    <p class="text-lg mb-4 text-pretty">{description}</p>
+                    <ul class="flex gap-x-2 flex-row mb-2">
+                        {tags.map((tag) => (
+                            <li>
+                                <span
+                                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+                                >
+                                    <tag.icon class="size-4" />
+                                    {tag.name}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                </article>
+            </div>
+        ))
+    }
+</div>

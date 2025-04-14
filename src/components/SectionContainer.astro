@@ -1,0 +1,21 @@
+---
+const { class: className, id, type = "default" } = Astro.props;
+
+let typeClass = "";
+
+
+
+if (type === "inicio") {
+    typeClass = "w-full mx-auto lg:w-full pt-30 pb-24";
+} else if (type === "experiencia") {
+    typeClass = "w-full mx-auto lg:w-full pt-30 pb-24 ";
+} else if (type === "proyectos") {
+    typeClass = "w-full mx-auto lg:w-full pt-30 pb-24";
+} else if (type === "habilidades") {
+    typeClass = "w-full mx-auto lg:w-full pt-30 pb-24";
+}
+---
+
+<section id={id} class={ typeClass }>
+    <slot />
+</section>

@@ -1,0 +1,130 @@
+---
+import TailwindcssIcon from "../icons/Tailwindcss.astro";
+import AstroIcon from "../icons/Icono.astro";
+import JavaScriptIcon from "../icons/JavaScript.astro";
+import JavaIcon from "../icons/java.astro";
+import CIcon from "../icons/C.astro";
+import CssIcon from "../icons/Css3.astro"; 
+import HtmlIcon from "../icons/Html5.astro";
+import VisualStudioIcon from "../icons/VisualStudio.astro";
+import PythonIcon from "../icons/Python.astro";
+import ApacheNetbeansIcon from "../icons/ApacheNetbeans.astro";
+import PostgreSqlIcon from "../icons/PostgreSql.astro";
+import MatlabIcon from "../icons/Matlab.astro";
+import CodeBlockslIcon from "../icons/CodeBlocks.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import MySqlIcon from "../icons/MySql.astro";
+import EclipseIcon from "../icons/Eclipse.astro";
+
+const TAGS = {
+    ASTRO: {
+        icon: AstroIcon,
+        name: "Astro",
+    },
+    TAILWIND: {
+        icon: TailwindcssIcon,
+        name: "Tailwind",
+    },
+    JAVASCRIPT: {
+        icon: JavaScriptIcon,
+        name: "JavaScript",
+    },
+    JAVA: {
+        icon: JavaIcon,
+        name: "Java",
+    },
+    C: {
+        icon: CIcon,
+        name: "C++",
+    },   
+    PYTHON: {
+        icon: PythonIcon,
+        name: "Python",
+    },
+    MATLAB: {
+        icon: MatlabIcon,
+        name: "Matlab",
+    },
+    VISUALSTUDIO: {
+        icon: VisualStudioIcon,
+        name: "VisualStudio",
+    },
+    APACHENETBEANS: {
+        icon: ApacheNetbeansIcon,
+        name: "Netbeans",
+    },
+    CSS: {
+        icon: CssIcon,
+        name: "CSS3",
+    },
+    HTML: {
+        icon: HtmlIcon,
+        name: "HTML5",
+    },
+    POSTGRESQL: {
+        icon: PostgreSqlIcon,
+        name: "PostgreSQL",
+
+    },
+    CODEBLOCKS: {
+        icon: CodeBlockslIcon,
+        name: "CodeBlocks",
+    },
+    GITHUB: {
+        icon: GitHubIcon,
+        name: "GitHub",
+    },
+    MYSQL: {
+        icon: MySqlIcon,
+        name: "MySQL",
+    },
+    ECLIPSE: {
+        icon: EclipseIcon,
+        name: "Eclipse",
+    },
+};
+
+const HABILIDADES = [
+    {
+        title: "FRONTED",
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT,],
+    },
+    {
+        title: "BACKEND",
+        tags: [TAGS.JAVA, TAGS.C, TAGS.PYTHON, TAGS.POSTGRESQL,],
+    },
+    {
+        title: "APRENDIENDO",
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.MYSQL, TAGS.GITHUB,],
+    },
+    {
+        title: "HERRAMIENTAS",
+        tags: [TAGS.VISUALSTUDIO, TAGS.APACHENETBEANS, TAGS.MATLAB, TAGS.CODEBLOCKS, TAGS.ECLIPSE,],
+    },
+];
+---
+
+<div class=" gap-6 max-w-4xl mx-60 lg:mx-auto">
+{  
+    HABILIDADES.map(({ title, tags }) => (
+    <div class=" cursor-pointer">     
+        <article
+            class="  bg-white/10 shadow-xl rounded-2xl overflow-hidden p-4 mb-8">
+            <h3 class="text-5xl font-semibold text-yellow-200 mb-8 text-center">{title}</h3>
+            
+            <ul class="grid grid-cols-1 lg:grid-cols-3 gap-6 justify-items-center items-center ">
+                {tags.map((tag) => (
+            <li class="relative group flex flex-col items-center">
+                <tag.icon class="size-20 mb-16 transition-transform duration-300 hover:scale-110" />
+            <span class="absolute bottom-[1rem] text-white text-xl rounded px-2 py-1 
+                         opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        {tag.name}
+            </span>    
+            </li>
+            ))}
+            </ul>
+        </article>
+    </div>
+    ))
+}
+</div>

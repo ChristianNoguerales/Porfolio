@@ -1,0 +1,38 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    title: "CAJERO DE BANCA",
+    company: "CAIXABANK",
+    location: "Velilla de San Antonio",
+    date: " JUNIO 2022 - JULIO 2022",
+    description:
+      " Encargado de la atención al cliente, brindando asistencia personalizada y resolviendo de forma eficiente las dudas, quejas o incidencias presentadas por los usuarios. Entre mis responsabilidades se incluía la recepción, entrega y custodia de dinero en efectivo, cheques, giros postales y otros documentos de valor, asegurando siempre un manejo seguro y preciso. Mi labor requería habilidades de comunicación, empatía, organización y un alto grado de responsabilidad en el manejo de operaciones sensibles.",
+  },
+  {
+    title: "AGENTE TELEFÓNICO",
+    company: "BBVA",
+    location: "Rivas Vaciamadrid",
+    date: "JUNIO 2023 - AGOSTO 2023",
+    description:" Encargado de la atención al cliente y resolución de problemas por teléfono, siendo el primer punto de contacto para los clientes de BBVA. Mi función principal era escuchar las inquietudes y necesidades de los clientes, proporcionando soluciones efectivas y asesoramiento en tiempo real. También manejaba incidencias relacionadas con cuentas, transacciones y servicios bancarios, asegurando una experiencia satisfactoria para el usuario. Para ello, debía tener un profundo conocimiento de los productos y servicios del banco, así como habilidades de comunicación clara y empatía para resolver problemas de manera eficiente y profesional.",
+  },
+  {
+    title: "TELEOPERADOR - VENTA CRUZADA (SEGUROS)",
+    company: "TEYAME",
+    location: "Canillejas",
+    date: "JULIO 2024 - AGOSTO 2024",
+    description: "Como encargado de atención al cliente en una aseguradora de seguros, mi tarea principal era gestionar las consultas y resolver problemas por teléfono. Mi rol implicaba asistir en la resolución de dudas relacionadas con pólizas de seguro, gestionar solicitudes de reclamaciones y proporcionar información detallada sobre coberturas y procedimientos. Mi enfoque estaba siempre en la eficacia y la claridad, ayudando a los clientes a comprender y resolver sus necesidades de manera rápida y eficiente",
+  },
+];
+---
+
+<ol class=" border-s border-gray-200 flex flex-col lg:flex-row justify-between items-center mx-60 gap-4 lg:gap-10 ">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class=" ms-4 mr-10">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

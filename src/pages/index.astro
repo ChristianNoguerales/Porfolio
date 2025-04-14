@@ -1,0 +1,128 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import SocialPill from "../components/SocialPill.astro";
+import MailIcon from "../icons/Mail.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Briefcase from "../icons/Briefcase.astro";
+import CodeIcon from "../icons/Code.astro";
+import Projects from "../components/Projects.astro";
+import LinkedinIcon from "../icons/Linkedin.astro";
+import Image from "astro/components/Image.astro";
+import Habilidades from "../components/Habilidades.astro";
+import HabilidadesIcon from "../icons/Habilidades.astro";
+{
+  /*Este archivo index.astro es la página principal del sitio en Astro. 
+Es decir, cuando alguien accede a https://tu-sitio.com/, este archivo es el que se carga.
+
+*/
+}
+---
+
+<Layout
+  title="Porfolio de christian - Programador"
+  description="Contrata a christian para desarrollar codigo."
+>
+  <main>
+    <SectionContainer id="inicio" type="inicio">
+      <header
+        class="mx-60 flex flex-col lg:flex-row justify-between gap-4 lg:gap-10 items-center text-2xl pt-2"
+      >
+        <div class="flex flex-col gap-3">
+          <h1
+            class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-3 lg:pb-10"
+          >
+            Hey, soy Christian <a
+            
+              href="https://www.linkedin.com/in/christian-noguerales-alburquerque-6445781b5/"
+              target="_blank"
+              rel="noopener"
+              class="flex justify-center items-center"
+            >
+              <Badge>Linkedin</Badge>
+            </a>
+          </h1>
+
+          <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+            <span class="text-blue-200/90 opacity-100">
+              Desarrolador Backed-End</span
+            >
+          </h2>
+          <p class="text-pretty max-w-[60%]">
+            Ingeniero en Computadores y actualmente estudiante en la Universidad
+            de Alcalá
+          </p>
+
+          <p class="text-pretty max-w-[60%]">
+            Estoy buscando nuevas oportunidades para crecer profesionalmente y
+            contribuir a proyectos interesantes wakhdjklahahbfba wdhnwajohdf awdgbiawgdb.
+          </p>
+
+          <nav class="flex gap-4 mt-8 flex-wrap">
+            <SocialPill
+              href="https://www.linkedin.com/in/christian-noguerales-alburquerque-6445781b5/"
+            >
+              <GitHubIcon class="size-4 md:size-6" />
+              GitHub
+            </SocialPill>
+
+            <SocialPill
+              href="https://www.linkedin.com/in/christian-noguerales-alburquerque-6445781b5/"
+            >
+              <LinkedinIcon class="size-4 md:size-6" />
+              Linkedin
+            </SocialPill>
+
+            <SocialPill href="mailto:christiannoguerales@gmail.com">
+              <MailIcon class="size-4 md:size-6" />
+              Mail
+            </SocialPill>
+          </nav>
+        </div>
+
+        <div
+          class=" flex justify-center items-center lg:mt-o"
+        >
+          <Image
+            src="/CV.jpeg"
+            alt="Imagen perfil"
+            width={260}
+            height={260}
+            class="rounded-full w-150 h-150 object-cover shadow-md border-2 border-black"
+            loading="eager"
+          />
+        </div>
+      </header>
+    </SectionContainer>
+
+    <SectionContainer id="experiencia" type="experiencia">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center mx-60">
+        <Briefcase class="size-7" />
+        Experiencia laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="proyectos" type="proyectos">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center mx-60">
+        <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="habilidades" type="habilidades">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center mx-60">
+        <HabilidadesIcon class="size-7" />
+        Habilidades
+      </h2>
+      <Habilidades />
+    </SectionContainer>
+
+    <footer>
+
+    </footer>
+  </main>
+</Layout>
