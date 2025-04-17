@@ -15,6 +15,7 @@ import CodeBlockslIcon from "../icons/CodeBlocks.astro";
 import GitHubIcon from "../icons/GitHub.astro";
 import MySqlIcon from "../icons/MySql.astro";
 import EclipseIcon from "../icons/Eclipse.astro";
+import MongoDBIcon from "../icons/MongoDB.astro";
 
 const TAGS = {
     ASTRO: {
@@ -66,6 +67,11 @@ const TAGS = {
         name: "PostgreSQL",
 
     },
+    MONGODB: {
+        icon: MongoDBIcon,
+        name: "MongoDB",
+
+    },
     CODEBLOCKS: {
         icon: CodeBlockslIcon,
         name: "CodeBlocks",
@@ -85,17 +91,14 @@ const TAGS = {
 };
 
 const HABILIDADES = [
-    {
-        title: "FRONTED",
-        tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT,],
-    },
+
     {
         title: "BACKEND",
         tags: [TAGS.JAVA, TAGS.C, TAGS.PYTHON, TAGS.POSTGRESQL,],
     },
     {
         title: "APRENDIENDO",
-        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.MYSQL, TAGS.GITHUB,],
+        tags: [TAGS.MYSQL, TAGS.MONGODB, TAGS.GITHUB, TAGS.JAVASCRIPT,TAGS.ASTRO, TAGS.TAILWIND ],
     },
     {
         title: "HERRAMIENTAS",
@@ -103,19 +106,31 @@ const HABILIDADES = [
     },
 ];
 ---
+<style>
+.montserrat-400 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;   
+  font-style: normal;
+}
+</style>
 
-<div class=" gap-6 max-w-4xl mx-60 lg:mx-auto">
+<div class=" gap-6 max-w-4xl px-8 md:px-16 lg:mx-auto montserrat-400">
 {  
     HABILIDADES.map(({ title, tags }) => (
     <div class=" cursor-pointer">     
         <article
-            class="  bg-white/10 shadow-xl rounded-2xl overflow-hidden p-4 mb-8">
-            <h3 class="text-5xl font-semibold text-yellow-200 mb-8 text-center">{title}</h3>
+            class=" bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md shadow-2xl shadow-yellow-200/20 hover:shadow-yellow-300/30 
+                   rounded-2xl overflow-hidden p-6 mb-30 transition duration-300 hover:scale-[1.02]">
+            <h3 class={`text-center mb-8 font-bold text-4xl lg:text-5xl 
+                        ${title === "BACKEND" ? "text-fuchsia-400" : title === "APRENDIENDO" ? "text-cyan-300" : "text-violet-500"}`}>
+                {title}
+            </h3>
             
             <ul class="grid grid-cols-1 lg:grid-cols-3 gap-6 justify-items-center items-center ">
                 {tags.map((tag) => (
             <li class="relative group flex flex-col items-center">
-                <tag.icon class="size-20 mb-16 transition-transform duration-300 hover:scale-110" />
+                <tag.icon class="size-20 mb-16 transition-transform duration-300 hover:scale-110 hover:rotate-12" />
             <span class="absolute bottom-[1rem] text-white text-xl rounded px-2 py-1 
                          opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                         {tag.name}
