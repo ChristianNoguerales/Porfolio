@@ -27,10 +27,10 @@ const EXPERIENCE = [
 ];
 ---
 
-<ol class=" border-s border-gray-200 flex flex-col lg:flex-row px-8 md:px-16 lg:px-60 gap-4 lg:gap-10 ">
+<ol class=" border-s border-gray-200 flex flex-col lg:flex-row px-8 md:px-16 2xl:px-60 gap-4 lg:gap-10 ">
   {
     EXPERIENCE.map((experience) => (
-      <li class=" ms-4 mr-10">
+      <li class=" ms-4 mr-10 md:mr-0">
         <ExperienceItem {...experience} />
       </li>
     ))
