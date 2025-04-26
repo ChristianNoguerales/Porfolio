@@ -1,15 +1,87 @@
+---
+// Links del menú
+const navLinks = [
+  { url: '#top', name: 'Inicio' },
+  { url: '#experiencia', name: 'Experiencia' },
+  { url: '#proyectos', name: 'Proyectos' },
+  { url: '#habilidades', name: 'Habilidades' },
+];
+---
+
 <style>
     .montserrat-400 {
-      font-family: "Montserrat", sans-serif;
-      font-optical-sizing: auto;
-      font-weight: 600;   
-      font-style: normal;
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
     }
-    </style>
+    .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30px;
+    height: 24px;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 50;
+  }
+  .hamburger span {
+    display: block;
+    height: 3px;
+    background: #00ffcc;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75vw;
+    max-width: 400px;
+    height: 100vh;
+    background: #0a192f;
+    box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    transition: right 0.3s ease;
+    z-index: 40;
+  }
+  .sidebar.open {
+    right: 0;
+  }
+  .sidebar nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    font-family: monospace;
+    color: #ccd6f6;
+  }
+  .sidebar nav a {
+    font-size: 1.2rem;
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+  }
+  .sidebar nav a::before {
+    content: attr(data-number);
+    color: #00ffcc;
+    margin-right: 8px;
+    font-size: 0.9rem;
+  }
+  @media(min-width: 768px){
+    .hamburger {
+      display: none;
+    }
+  }
+</style>
+
 <header
     class="text-gray-200 montserrat-400 shadow-sm backdrop-blur-lg sticky top-0 flex justify-between items-center py-2 w-full bg-[rgba(31,41,55,0.5)] z-10"
 >
-    <div class="flex items-center 2xl:px-60 md:px-16">
+    <div class="flex items-center 2xl:px-60 md:px-16 px-8">
         <div class="text-3xl lg:text-6xl font-bold text-green-300 lg:mr-2 mr-1">
             C
         </div>
@@ -21,34 +93,50 @@
         </div>
     </div>
 
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-4 relative">
         <nav
-            id="menu"
             class="hidden flex-col lg:flex lg:flex-row gap-y-4 2xl:gap-x-10 md:gap-x-5 text-center opacity-80 lg:text-base md:text-sm text-xs 2xl:px-60 md:px-16"
         >
-            <a href="#top" class="hover:underline">Inicio </a>
-            <a href="#experiencia" class="hover:underline">Experiencia</a>
-            <a href="#proyectos" class="hover:underline">Proyectos</a>
-            <a href="#habilidades" class="hover:underline">Habilidades</a>
+        {navLinks.map((link) => (
+            <a href={link.url} class="hover:underline">{link.name}</a>
+          ))}
         </nav>
-        <button
-            class="lg:hidden flex flex-col justify-center items-center w-10 h-10 m-4 z-50 relative"
-            id="menu-toggle"
-        >
-            <span class="block w-6 h-0.5 bg-white mb-1"></span>
-            <span class="block w-6 h-0.5 bg-white mb-1"></span>
-            <span class="block w-6 h-0.5 bg-white"></span>
-        </button>
+
+    <!-- Botón hamburguesa para móvil -->
+    <div class="hamburger" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-</header>
-
-<script type="module" is:inline>
-    const toggleButton = document.getElementById("menu-toggle");
-    const menu = document.getElementById("menu");
-
-    toggleButton.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-        menu.classList.toggle("flex");
+  </header>
+  
+  <!-- Menú lateral móvil -->
+  <aside id="sidebar" class="sidebar">
+    <nav>
+      {navLinks.map((link, index) => (
+        <a href={link.url} data-number={`0${index + 1}.`}>{link.name}</a>
+      ))}
+    </nav>
+  </aside>
+  
+  <script is:inline>
+    const toggleButton = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+  
+    toggleButton.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
     });
-</script>
-
+  
+    document.addEventListener('click', (e) => {
+      if (!sidebar.contains(e.target) && !toggleButton.contains(e.target)) {
+        sidebar.classList.remove('open');
+      }
+    });
+  
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        sidebar.classList.remove('open');
+      }
+    });
+  </script>
