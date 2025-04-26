@@ -7,10 +7,12 @@
     }
     </style>
 <header
-    class="text-gray-200 montserrat-400 shadow-sm backdrop-blur-lg sticky top-0 flex justify-between items-center py-2 w-full bg-[rgba(31,41,55,0.5)] z-10 "
+    class="text-gray-200 montserrat-400 shadow-sm backdrop-blur-lg sticky top-0 flex justify-between items-center py-2 w-full bg-[rgba(31,41,55,0.5)] z-10"
 >
-    <div class="flex items-center lg:px-60 md:px-16">
-        <div class="text-3xl lg:text-6xl font-bold text-green-300 lg:mr-2 mr-1">C</div>
+    <div class="flex items-center 2xl:px-60 md:px-16">
+        <div class="text-3xl lg:text-6xl font-bold text-green-300 lg:mr-2 mr-1">
+            C
+        </div>
 
         <div class="flex flex-col items-start lg:text-base text-xs">
             <div class="font-semibold text-white uppercase">NOGUERALES</div>
@@ -19,10 +21,34 @@
         </div>
     </div>
 
-    <nav class="flex flex-row gap-x-2 lg:gap-x-10 md:gap-x-5 opacity-80 lg:text-base text-xs lg:px-60 md:px-16">
-        <a href="#top" class="hover:underline">Inicio </a>
-        <a href="#experiencia" class="hover:underline">Experiencia</a>
-        <a href="#proyectos" class="hover:underline">Proyectos</a>
-        <a href="#habilidades" class="hover:underline">Habilidades</a>
-    </nav>
+    <div class="flex items-center gap-4">
+        <nav
+            id="menu"
+            class="hidden flex-col lg:flex lg:flex-row gap-y-4 2xl:gap-x-10 md:gap-x-5 text-center opacity-80 lg:text-base md:text-sm text-xs 2xl:px-60 md:px-16"
+        >
+            <a href="#top" class="hover:underline">Inicio </a>
+            <a href="#experiencia" class="hover:underline">Experiencia</a>
+            <a href="#proyectos" class="hover:underline">Proyectos</a>
+            <a href="#habilidades" class="hover:underline">Habilidades</a>
+        </nav>
+        <button
+            class="lg:hidden flex flex-col justify-center items-center w-10 h-10 m-4 z-50 relative"
+            id="menu-toggle"
+        >
+            <span class="block w-6 h-0.5 bg-white mb-1"></span>
+            <span class="block w-6 h-0.5 bg-white mb-1"></span>
+            <span class="block w-6 h-0.5 bg-white"></span>
+        </button>
+    </div>
 </header>
+
+<script type="module" is:inline>
+    const toggleButton = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+
+    toggleButton.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+        menu.classList.toggle("flex");
+    });
+</script>
+
