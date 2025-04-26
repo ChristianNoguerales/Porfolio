@@ -71,22 +71,30 @@ const navLinks = [
     font-family: monospace;
     color: #ccd6f6;
   }
-  .sidebar nav a {
-    font-size: 1.5rem;
-    color: inherit;
-    text-decoration: none;
-    position: relative;
-    transition: color 0.2s;
-  }
-  .sidebar nav a:hover {
-    color: #00ffcc;
-  }
-  .sidebar nav a::before {
-    content: attr(data-number);
-    color: #00ffcc;
-    margin-right: 8px;
-    font-size: 0.9rem;
-  }
+.sidebar nav a {
+  font-size: 1.5rem;
+  color: inherit;
+  text-decoration: none;
+  display: flex; /* para alinear número + texto */
+  align-items: center;
+  gap: 8px; /* espacio entre número y texto */
+  width: 100%; /* ocupar todo el ancho */
+  justify-content: flex-start; /* alinear a la izquierda */
+  padding: 8px 0;
+  transition: color 0.2s;
+}
+.sidebar nav a:hover {
+  color: #00ffcc;
+}
+.sidebar nav a::before {
+  content: attr(data-number);
+  color: #00ffcc;
+  font-size: 0.9rem;
+  flex-shrink: 0; /* para que el número no se achique */
+  width: 40px; /* ancho fijo para alinear todos */
+  text-align: right;
+}
+
 
   .overlay {
     position: fixed;
