@@ -23,7 +23,7 @@ const navLinks = [
     height: 24px;
     gap: 5px;
     cursor: pointer;
-    z-index: 50;
+    z-index: 60;
     transition: all 0.3s ease;
   }
   .hamburger span {
@@ -54,8 +54,8 @@ const navLinks = [
     box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-top: 100px;
+    justify-content: center; /* <-- CENTRAR VERTICAL */
+    align-items: center;      /* <-- CENTRAR HORIZONTAL */
     transform: translateX(100%);
     transition: transform 0.3s ease;
     z-index: 50;
@@ -72,10 +72,14 @@ const navLinks = [
     color: #ccd6f6;
   }
   .sidebar nav a {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: inherit;
     text-decoration: none;
     position: relative;
+    transition: color 0.2s;
+  }
+  .sidebar nav a:hover {
+    color: #00ffcc;
   }
   .sidebar nav a::before {
     content: attr(data-number);
