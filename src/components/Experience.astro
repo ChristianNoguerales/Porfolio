@@ -3,31 +3,19 @@ import ExperienceItem from "./ExperienceItem.astro";
 
 const EXPERIENCE = [
   {
-    title: "CAJERO DE BANCA",
-    company: "CAIXABANK",
-    location: "Velilla de San Antonio",
-    date: " JUNIO 2022 - JULIO 2022",
+    title: "",
+    company: "",
+    location: "",
+    date: " ",
     description:
-      " Encargado de la atención al cliente, brindando asistencia personalizada y resolviendo de forma eficiente las dudas, quejas o incidencias presentadas por los usuarios. Entre mis responsabilidades se incluía la recepción, entrega y custodia de dinero en efectivo, cheques, giros postales y otros documentos de valor, asegurando siempre un manejo seguro y preciso. Mi labor requería habilidades de comunicación, empatía, organización y un alto grado de responsabilidad en el manejo de operaciones sensibles.",
-  },
-  {
-    title: "AGENTE TELEFÓNICO",
-    company: "BBVA",
-    location: "Rivas Vaciamadrid",
-    date: "JUNIO 2023 - AGOSTO 2023",
-    description:" Encargado de la atención al cliente y resolución de problemas por teléfono, siendo el primer punto de contacto para los clientes de BBVA. Mi función principal era escuchar las inquietudes y necesidades de los clientes, proporcionando soluciones efectivas y asesoramiento en tiempo real. También manejaba incidencias relacionadas con cuentas, transacciones y servicios bancarios, asegurando una experiencia satisfactoria para el usuario. Para ello, debía tener un profundo conocimiento de los productos y servicios del banco, así como habilidades de comunicación clara y empatía para resolver problemas de manera eficiente y profesional.",
-  },
-  {
-    title: "TELEOPERADOR - VENTA CRUZADA",
-    company: "TEYAME",
-    location: "Canillejas",
-    date: "JULIO 2024 - AGOSTO 2024",
-    description: "Como encargado de atención al cliente en una aseguradora de seguros, mi tarea principal era gestionar las consultas y resolver problemas por teléfono. Mi rol implicaba asistir en la resolución de dudas relacionadas con pólizas de seguro, gestionar solicitudes de reclamaciones y proporcionar información detallada sobre coberturas y procedimientos. Mi enfoque estaba siempre en la eficacia y la claridad, ayudando a los clientes a comprender y resolver sus necesidades de manera rápida y eficiente",
+      " Soy un desarrollador back-end en formación con una base sólida adquirida a través de proyectos académicos y personales, enfocados principalmente en la programación con C++, Python y Java. He trabajado en el desarrollo de sistemas y aplicaciones donde he aplicado estructuras de datos, lógica de programación y conceptos fundamentales de la arquitectura del software. Además, tengo experiencia utilizando PostgreSQL para la gestión de bases de datos relacionales y consultas eficientes. Me apasiona el desarrollo del lado del servidor, la optimización del rendimiento y la creación de soluciones funcionales y escalables. A pesar de no tener experiencia laboral formal, he participado activamente en proyectos universitarios donde he aprendido a trabajar de forma organizada, a colaborar en equipo y a cumplir objetivos técnicos en plazos definidos. De forma autodidacta, he comenzado a explorar tecnologías web como Tailwind CSS y Astro, lo que me permitió diseñar un pequeño portafolio personal para mostrar mis proyectos. Aunque estoy dando mis primeros pasos en este entorno, me interesa seguir ampliando mis conocimientos en herramientas modernas de back-end. Estoy buscando una primera oportunidad laboral donde pueda seguir aprendiendo, aplicar mis conocimientos y crecer profesionalmente en un entorno real de trabajo. Tengo muchas ganas de integrarme a un equipo de desarrollo, asumir nuevos retos y seguir formándome como desarrollador back-end.",
   },
 ];
 ---
 
-<ol class=" border-s border-gray-200 flex flex-col lg:flex-row px-8 md:px-16 2xl:px-60 gap-4 lg:gap-10 ">
+<ol
+  class="border-s border-gray-200 flex flex-col lg:flex-row px-8 md:px-16 2xl:px-60 gap-4 lg:gap-10"
+>
   {
     EXPERIENCE.map((experience) => (
       <li class=" ms-4 mr-10 md:mr-0">

@@ -93,7 +93,7 @@ const TAGS = {
 const HABILIDADES = [
 
     {
-        title: "BACKEND",
+        title: "BACK-END",
         tags: [TAGS.JAVA, TAGS.C, TAGS.PYTHON, TAGS.POSTGRESQL,],
     },
     {
@@ -120,18 +120,18 @@ const HABILIDADES = [
     HABILIDADES.map(({ title, tags }) => (
     <div class=" cursor-pointer">     
         <article
-            class=" bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md shadow-2xl shadow-yellow-200/20 hover:shadow-yellow-300/30 
+            class=" bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md shadow-2xl shadow-gray-500 hover-shadow-mint 
                    rounded-2xl overflow-hidden p-6 mb-30 transition duration-300 hover:scale-[1.02]">
-            <h3 class={`text-center mb-8 font-bold text-4xl lg:text-5xl 
-                        ${title === "BACKEND" ? "text-fuchsia-400" : title === "APRENDIENDO" ? "text-cyan-300" : "text-violet-500"}`}>
+            <h4 class={`text-center mb-8 font-bold text-4xl lg:text-5xl 
+                        ${title === "BACK-END" ? "text-fuchsia-400" : title === "APRENDIENDO" ? "text-cyan-300" : "text-violet-500"}`}>
                 {title}
-            </h3>
+            </h4>
             
             <ul class="grid grid-cols-1 lg:grid-cols-3 gap-6 justify-items-center items-center ">
                 {tags.map((tag) => (
             <li class="relative group flex flex-col items-center">
                 <tag.icon class="size-20 mb-16 transition-transform duration-300 hover:scale-110 hover:rotate-12" />
-            <span class="absolute bottom-[1rem] text-white text-xl rounded px-2 py-1 
+            <span class="absolute bottom-[1rem] text-green-300 text-xl rounded px-2 py-1 
                          opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                         {tag.name}
             </span>    
